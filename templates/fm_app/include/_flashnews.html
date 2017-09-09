@@ -1,0 +1,14 @@
+<div class="flash-news">
+    <h5>Flash News</h5>
+</div>
+<div class="news_scrolling">
+  <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+    {% for news in recent_news %}
+    <a href="{% url "fm_app:news_details" pk=news.pk %}">
+      <div class="news_scroll">
+        <p>{{news.title}}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </marquee>
+</div>

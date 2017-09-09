@@ -1,0 +1,9 @@
+{% for news in newsmodel_list %}
+  {% with topic|add:" News" as extended_topic %}
+    {% if extended_topic == news.get_newstype_display %}
+      <div>
+          {% include "fm_app/include/_news_tab.html" %}
+      </div>
+    {% endif %}
+  {% endwith %}
+{% endfor %}

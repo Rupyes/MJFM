@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load tz %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Madhesh Jan Aawaj FM</title>
+  {% block meta_block %}
+  {% endblock %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'fm_app/css/style.css' %}">
+
+  <!-- slider -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+  <div class="panel panel-info constant">
+    <div class="panel-heading nowplaying">
+      {% now 'P' as time %}
+      {% for program in nowplaying %}
+      {% if program.start_time|time:"P" <= time and program.end_time|time:"P" >= time %}
+                <p>
+                  <span class="glyphicon glyphicon-play"></span>
+                  <u>Now Playing:</u>
+                </p>
+                <h5>
+                    {{ program.title }}
+                </h5>
+        {% else %}
+                <p>
+                  <span class="glyphicon glyphicon-step-forward"></span>
+                  <u>Next:</u>
+                  @{{program.start_time}}<br>
+                  {{ program.title }}
+                </p>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="radio">
+      <p>radio button coming soon..</p>
+      <p>{% now "P" %}</p>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 style="float:left;">Madhesh Jan Aawaj FM</h1>
+    <h4 style="float:right; padding-top:25px;">{% now "jS F Y, l" %}</h4>
+  </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <a href="{% url 'homepage'%}" class="nav navbar-brand">98.6MHz</a>
+      <ul class="nav navbar-nav navbar-left">
+        <li class="nav navbar-link"><a href="{% url 'homepage'%}">Home</a></li>
+        <li class="nav navbar-link"><a href="{% url 'fm_app:about' %}">About</a></li>
+        <li class="nav navbar-link"><a href="{% url 'fm_app:listofnews' %}">News</a></li>
+        <li class="nav navbar-link"><a href="{% url 'fm_app:gallery' %}">Gallery</a></li>
+        <li class="nav navbar-link"><a href="{% url 'fm_app:profiles' %}">Profile</a></li>
+        <li class="nav navbar-link"><a href="{% url 'fm_app:schedule'%}">Program-Schedule</a></li>
+        <li class="nav navbar-link"><a href="{% url 'fm_app:contact'%}">Contact</a></li>
+      </ul>
+
+    </nav>
+    {% block flashnewsbar %}
+
+    {% endblock %}
+
+  </div>
+
+  {% block slider %}
+
+  {% endblock %}
+
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+
+
+  <div class="mini_content">
+    <div class="container">
+      <div class="calender">
+        <ins style="width:100%;height:100%;" class="nepalipatro-wg" widget="day"/><script src="//nepalipatro.com.np/widget/js"></script>
+      </div>
+      <div class="menus_below">
+        <h4>Menu</h4>
+        <hr>
+        <ul>
+          <li><a href="{% url 'homepage'%}">Home</a></li>
+          <li><a href="{% url 'fm_app:about' %}">About</a></li>
+          <li><a href="{% url 'fm_app:listofnews' %}">News</a></li>
+          <li><a href="{% url 'fm_app:gallery' %}">Gallery</a></li>
+          <li><a href="{% url 'fm_app:profiles' %}">Profile</a></li>
+          <li><a href="{% url 'fm_app:schedule'%}">Program-Schedule</a></li>
+          <li><a href="{% url 'fm_app:contact'%}">Contact</a></li>
+        </ul>
+      </div>
+      <div class="fb_block">
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMadhesh-Jan-Aawaj-FM-986-MHz-282602768538347%2F&tabs&width=380&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="380" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+      </div>
+
+  </div>
+
+
+  <div class="footer">
+    <div class=" container">
+      <p style="float: left;">Copyright 2017. All right reserved.</p>
+      <p style="float:right;">Rupesh Maharjan</p>
+    </div>
+  </div>
+</body>
+
+</html>

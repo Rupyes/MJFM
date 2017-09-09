@@ -1,0 +1,39 @@
+{% extends "fm_app/base.html" %} {% block content %}
+<div class="jumbotron">
+  <h2>Madhesh Jan Awaj FM 98.6 MHz</h2>
+  <h2>Garuda-9, Rautahat</h2>
+  <h3>+977-055-565373/565374</h3>
+  <a href="mailto:mjfnews@yahoo.com, madheshjanavajfm@gmail.com"><h2>Email:</h2></a>
+  <h3><a href="mailto:mjfnews@yahoo.com, madheshjanavajfm@gmail.com">
+    mjfnews@yahoo.com</h3>
+  <a href="mailto: madheshjanavajfm@gmail.com"><h3>madheshjanavajfm@gmail.com</h3></a>
+  </a>
+  <h2>Website:</h2>
+  <p>www.madheshjanawajfm.org.np</p>
+</div>
+
+<div class="jumbotron">
+  <h1>Contact:</h1>
+  <hr><hr>
+  <form method="post">
+    {% csrf_token %}
+    {% for error in form.non_field_errors %}
+       <div class="form-group has-errors text-danger small">
+              {{error}}
+        </div>
+    {% endfor %}
+    {% for field in form %}
+      <div class="form-group has-errors text-danger small">
+                {{field.errors}}
+      </div>
+      <div class="form-group has-errors text-danger small">
+      </div>
+      <div class="form-group">
+        {{field}}
+      </div>
+    {% endfor %}
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </form>
+</div>
+
+{% endblock %}

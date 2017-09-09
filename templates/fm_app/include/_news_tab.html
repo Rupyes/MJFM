@@ -1,0 +1,30 @@
+{% if news.image %}
+<a href="{% url 'fm_app:news_details' pk=news.pk %}">
+  <div class="newstab">
+    <div class="tab_title">
+      <h3>{{news.title}}</h3>
+    </div>
+    <div class="tab_image">
+      <img class="thumbnail" src="{{ news.image.url }}">
+    </div>
+    <div class="tab_description">
+      <p>{{news.news|truncatewords:150}}</p>
+    </div>
+  </div>
+</a>
+
+
+{% else %}
+<a href="{% url 'fm_app:news_details' pk=news.pk %}">
+  <div class="newstab">
+    <div class="tab_title_else">
+  <h3>{{news.title}}</h3>
+    </div>
+    <div class="tab_description_else">
+  <p>{{news.news|truncatewords:200}}</p>
+    </div>
+  </div>
+</a>
+
+
+{% endif %}

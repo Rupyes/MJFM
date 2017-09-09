@@ -1,0 +1,44 @@
+{% extends "fm_app/base.html" %}
+{% block meta_block %}
+<script type="text/javascript">var switchTo5x = true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "013d07b0-3787-4985-97bf-b2f96b034a76", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+{% if news_details.image %}
+<meta property="og:title"         content="{{news_details.title}}" />
+<meta property="og:description"   content="{{news_details.news}}" />
+<meta property="og:image"         content="{{ news_details.image }}" />
+  {% else %}
+
+
+  <meta property="og:title"         content="{{news_details.title}}" />
+  <meta property="og:description"   content="news_details.news" />
+
+{% endif %}
+<meta property="og:type"         content="article" />
+<meta property="og:url"           content="{{ request.build_absolute_uri }}" />
+{% endblock %}
+{% block content %}
+  <div style="float:left;">
+    <h2><u>{{news_details.title}}</u></h2>
+    {% if news_details.image %}
+    <img class="thumbnail detail_thumbnail" src="{{ news_details.image.url }}" alt="img">
+    {% endif %}
+
+    <h5>{{news_details.src_name}}</h5>
+    <p style="text-align:justify;">{{news_details.news|linebreaksbr}}</p>
+  </div>
+  <div style="float:left; width:100%;">
+    <div style="float:left;margin-right:10px;">
+      <h4>Share:</h4>
+    </div>
+    <div style="float:left">
+      <div class="share-this" style="padding-top:10px;">
+        <span class='st_sharethis' displayText='ShareThis'></span>
+        <span class='st_facebook' displayText='Facebook'></span>
+        <span class='st_twitter' displayText='Tweet'></span>
+        <span class='st_googleplus' displayText='Google +'></span>
+        <span class='st_email' displayText='Email'></span>
+    </div>
+  </div>
+</div>
+{% endblock %}

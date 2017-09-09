@@ -1,0 +1,17 @@
+{% if news.image %}
+<div class="cards">
+  <img class="thumbnail news_thumbnail" src="{{ news.image.url }}" alt="">
+  <div class="card_title">
+    <h5>{{ news.title }}</h5>
+  </div>
+</div>
+
+{% else %}
+<div class="cards">
+  <div class="card_title_else">
+    <h5>{{ news.title }}</h5>
+    <p>{{ news.news|truncatewords:65 }}</p>
+  </div>
+
+</div>
+{% endif %}

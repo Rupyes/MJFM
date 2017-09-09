@@ -1,0 +1,109 @@
+{% extends "fm_app/base.html" %}
+
+
+{% block flashnewsbar %}
+<div class="flash-news-bar">
+  {% include "fm_app/include/_flashnews.html" %}
+</div>
+{% endblock %}
+
+
+
+{% block slider %}
+<div class="slider">
+  <div class="container">
+  <div class="topfournews">
+    {% for news in topfournews %}
+      {% include "fm_app/include/_top_four_news.html" %}
+    {% endfor %}
+  </div>
+    <div class="slide">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-slide-to="0" class="active"></li>
+          {% for slide in slides %}
+          <li data-slide-to="{{ 1|add:1 }}"></li>
+          {% endfor %}
+        </ol>
+
+        <!-- Wrapper for slides -->
+
+        <div class="carousel-inner">
+          {% for a_slide in one_slide %}
+          <div class="item active" style=" width:100%; height:400px;">
+            <img src="{{ a_slide.image.url }}" style="width:100%; object-fit:contain;">
+            <div class="carousel-caption">
+              <h3>{{a_slide.title}}</h3>
+              <p>{{a_slide.slide_desc}}</p>
+            </div>
+          </div>
+          {% endfor %} {% for slide in slides %}
+          <div class="item" style="width:100%; height:400px;">
+            <img src="{{ slide.image.url }}" style="width:100%; object-fit:contain;">
+            <div class="carousel-caption">
+              <h3>{{slide.title}}</h3>
+              <p>{{slide.slide_desc}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+
+
+{% block content %}
+    <h2><u>News</u></h2>
+    <hr>
+    {% with 'Local National Sports International' as list %}
+    {% for topic in list.split %}
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h4>{{topic}} News</h4>
+        </div>
+        <div class="panel-body news_container">
+          {% if topic|upper == 'LOCAL' %}
+            {% for news in local_news %}
+              <a href="{% url 'fm_app:news_details' pk=news.pk %}">
+                {% include "fm_app/include/_news_card.html" %}
+              </a>
+            {% endfor %}
+          {% endif %}
+
+          {% if topic|upper == 'NATIONAL' %}
+            {% for news in national_news %}
+              <a href="{% url 'fm_app:news_details' pk=news.pk %}">{% include "fm_app/include/_news_card.html" %}</a>
+            {% endfor %}
+          {% endif %}
+
+          {% if topic|upper == 'SPORTS' %}
+            {% for news in sports_news %}
+              <a href="{% url 'fm_app:news_details' pk=news.pk %}">{% include "fm_app/include/_news_card.html" %}</a>
+            {% endfor %}
+          {% endif %}
+
+          {% if topic|upper == 'INTERNATIONAL' %}
+            {% for news in international_news %}
+              <a href="{% url 'fm_app:news_details' pk=news.pk %}">{% include "fm_app/include/_news_card.html" %}</a>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  {% endwith %}
+{% endblock %}

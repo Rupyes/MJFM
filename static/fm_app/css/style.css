@@ -1,0 +1,464 @@
+body{
+  background: #fff;
+}
+
+/*----------------------------------flashnews----------------------------------------------*/
+.flash-news{
+  float: left;
+  background: maroon;
+  width: 10%;
+  height: 50px;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0px 5px 5px 5px;
+  box-shadow: #fff;
+}
+
+.flash-news h5{
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.news_scrolling{
+  margin-top:12px;
+  padding-top: 5px;
+  float: left;
+  width: 90%;
+}
+
+.flash-news-bar{
+  width: 100%;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  background: #d3d3d3;
+}
+
+.flash-news-bar marquee .news_scroll p{
+  display: inline;
+}
+
+.news_scroll{
+  padding: 10px;
+  margin-left: 2px;
+  display: inline;
+  width: 100%;
+  height: 50px;
+}
+
+.flash-news-bar a .news_scroll:hover{
+  color: maroon;
+  text-decoration: none;
+}
+
+/*-------------------------flashnews ends------------------------*/
+
+/*--------------------------slider and top 4 news starts-------------------------*/
+
+.slider{
+  background: #e7e8e1;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.slide{
+  width:650px;
+  float: left;
+}
+
+
+.topfournews{
+  margin-right: 15px;
+  float: left;
+  width: 475px;
+  height: 400px;
+}
+
+
+.fournews{
+  margin-left: 12px;
+  margin-top: 13px;
+  float: left;
+  width: 220px;
+  height: 180px;
+  object-fit: fill;
+  background: #000;
+  position: relative;
+}
+
+.fournews img{
+  max-width: 220px;
+  max-height: 180px;
+  width: 220px;
+  height: 180px;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.fournews p{
+  margin-left: 5px;
+  margin-top: 5px;
+  position: absolute;
+  white-space: normal;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px 1px;
+}
+
+.fournews :hover{
+  opacity: 1.0;
+}
+
+
+/*------------------------------slider and top 4 news ends-------------------------------*/
+
+
+.news_container{
+  width: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space:nowrap;
+}
+
+.news_container a{
+  color: #000333;
+}
+
+.news_container a:hover
+{
+  box-shadow: 0px 0px 0px 0px;
+}
+
+.cards{
+  margin-right: 25px;
+  padding: 2px;
+  padding-top: 10px;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  box-shadow: 2px 0px 12px 0px;
+}
+
+.cards:hover{
+  box-shadow: 0px 0px 0px 0px;
+}
+
+.card_title
+{
+  float: left;
+  border-top: 1px dotted #000;
+  width: 300px;
+  white-space: normal;
+
+}
+.card_title h5{
+  margin-left: 5px;
+  padding: 0px;
+  align-content: center;
+}
+
+.card_title_else{
+  width: 300px;
+  float: left;
+  white-space: pre-line;
+}
+.card_title_else h5{
+  margin-left: 5px;
+  margin-top: 0px;
+  padding: 0px;
+  align-content: center;
+}
+
+.card_title_else p{
+  margin-left: 5px;
+  margin-right: 10px;
+  text-align: justify;
+}
+
+.news_thumbnail{
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin: auto;
+  padding: 0px;
+  background-color: #000000;
+}
+
+.newstab{
+  float: left;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #d3d3d3;
+  margin-bottom: 15px;
+  padding:5px 0px 7px 5px;
+}
+
+.listofnews a{
+  color:#000;
+}
+
+/*in case of image present*/
+
+.tab_title{
+  float: left;
+  width: 99%;
+  height: 50px;
+  margin-left: 5px;
+  text-decoration: underline;
+}
+
+.tab_image{
+  float: left;
+  width: 40%;
+  height: 250px;
+  max-height: 250px;
+  background: #fff;
+}
+
+.tab_image img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  margin: auto;
+}
+
+.tab_description{
+  float: left;
+  width: 59%;
+  /*height: 250px;*/
+  margin-left: 5px;
+  border-radius: 4px;
+  border: 1px solid #d4d4d4;
+}
+
+.tab_title h3, .tab_title_else h3{
+  margin: 0px 0px 0px 10px;
+  white-space: normal;
+  padding: 0px;
+}
+
+.tab_description p, .tab_description_else p{
+  margin: 10px;
+  text-align: justify;
+}
+
+/*if image not present*/
+
+.tab_title_else{
+  float: left;
+  width: 99%;
+  height: 50px;
+  margin-left: 5px;
+  border-radius: 4px;
+  text-decoration: underline;
+}
+
+.tab_description_else{
+  float: left;
+  width: 99%;
+  height: 185px;
+  margin-left: 5px;
+  margin-top: 15px;
+  border-radius: 4px;
+  border: 1px solid #d4d4d4;
+}
+
+.detail_thumbnail{
+  max-width: 100%;
+  max-height: 450px;
+}
+
+
+.profilecard{
+  width: 800px;
+  height: 185px;
+  margin: 30px;
+}
+
+.profilepic{
+  width: 205px;
+  float: left;
+}
+
+
+.details_profile{
+  margin-left: 10px;
+  float: left;
+  width: 392px;
+}
+
+
+.mini_content{
+  background: grey;
+}
+
+.calender{
+  float: left;
+  width: 380px;
+  height: 300px;
+  padding: 15px;
+}
+
+.menus_below{
+  float: left;
+  width: 380px;
+  height: 300px;
+  padding-left: 40px;
+  padding-top: 40px;
+  padding-right: 40px;
+}
+
+.menus_below h4, .menus_below ul li a, .menus_below ul, .menus_below li{
+  margin: 0px;
+  padding: 0px;
+  color: #fff;
+}
+
+.menus_below ul li{
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.menus_below ul li a:hover{
+  text-decoration: none;
+  color: #fff;
+  margin-left: 7px;
+  font-size: 18px;
+  -webkit-transition: margin-left 0.2s; /* For Safari 3.1 to 6.0 */
+    transition: margin-left 0.2s;
+}
+
+.fb_block{
+  float: left;
+  margin: auto;
+  width: 380px;
+  height: 300px;
+  padding-top: 45px;
+}
+
+.footer{
+  background: #000;
+  padding-top: 40px;
+  height:100px;
+  color: #fff;
+}
+
+
+.constant{
+  top:200px;
+  left: -100px;
+  position: fixed;
+  max-width: 250px;
+  height: auto;
+  background: #d5d5d5;
+  z-index: 1;
+  -webkit-transition: left 0.1s; /* For Safari 3.1 to 6.0 */
+    transition: left 0.1s;
+}
+
+.constant:hover{
+    left: 0px;
+}
+
+.radio{
+  padding-left: 5px;
+}
+
+/*------------------gallery---------------------*/
+.gallery_photo_block{
+  float: left;
+  width: 100%;
+  padding: 10px;
+  border: 1px dotted #000;
+}
+
+.gallery_video_block{
+  margin-top: 10px;
+}
+
+.gallery_card_box{
+  margin: 11px;
+  float: left;
+  width: 350px;
+}
+
+.gallery_card_img{
+  width: 350px;
+  height: 200px;
+}
+
+.gallery_card_box img, video{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+#modal{
+  display:none;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:1;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  overflow: auto;
+}
+
+.full_image{
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 1000px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.full_image{
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+.cross{
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+
+.cross:hover,
+.cross:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}

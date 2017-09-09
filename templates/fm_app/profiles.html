@@ -1,0 +1,19 @@
+{% extends "fm_app/base.html" %}
+
+{% block flashnewsbar %}
+<div class="flash-news-bar">
+  {% include "fm_app/include/_flashnews.html" %}
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <h2>Staffs</h2>
+  <hr>
+
+  <div>
+    {% for profile  in pp %}
+      {% include "fm_app/include/_profile_cards.html" %}
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends "fm_app/base.html" %}
+
+{% block flashnewsbar %}
+<div class="flash-news-bar">
+  {% include "fm_app/include/_flashnews.html" %}
+</div>
+{% endblock %}
+
+{% block content %}
+<br>
+<!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#sunday" aria-controls="home" role="tab" data-toggle="tab">Sunday</a></li>
+    <li role="presentation"><a href="#monday" aria-controls="profile" role="tab" data-toggle="tab">Monday</a></li>
+    <li role="presentation"><a href="#tuesday" aria-controls="messages" role="tab" data-toggle="tab">Tuesday</a></li>
+    <li role="presentation"><a href="#wednesday" aria-controls="settings" role="tab" data-toggle="tab">Wednesday</a></li>
+    <li role="presentation"><a href="#thursday" aria-controls="thursday" role="tab" data-toggle="tab">Thursday</a></li>
+    <li role="presentation"><a href="#friday" aria-controls="thursday" role="tab" data-toggle="tab">Friday</a></li>
+    <li role="presentation"><a href="#saturday" aria-controls="thursday" role="tab" data-toggle="tab">Saturday</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+        <div role="tabpanel" class="tab-pane fade in active" id="sunday">
+          <table class="table table-striped">
+            <tr>
+              <th>Time</th>
+              <th>Program</th>
+              <th>Host</th>
+            </tr>
+            {% for schedule in sunday %}
+             <tr>
+               <td>{{schedule.start_time}} - {{schedule.end_time}}</td>
+               <td>{{schedule.title}}</td>
+               <td>{{schedule.host}}</td>
+             </tr>
+            {% endfor %}
+          </table>
+        </div>
+    <div role="tabpanel" class="tab-pane fade" id="monday">
+      <table class="table table-striped">
+        <tr>
+          <th>Time</th>
+          <th>Program</th>
+          <th>Host</th>
+        </tr>
+        {% for schedule in monday %}
+          <tr>
+            <td>{{schedule.start_time}} - {{schedule.end_time}}</td>
+            <td>{{schedule.title}}</td>
+            <td>{{schedule.host}}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="tuesday">
+      <table class="table table-striped">
+        <tr>
+          <th>Time</th>
+          <th>Program</th>
+          <th>Host</th>
+        </tr>
+        {% for schedule in tuesday %}
+          <tr>
+            <td>{{schedule.start_time}} - {{schedule.end_time}}</td>
+            <td>{{schedule.title}}</td>
+            <td>{{schedule.host}}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="wednesday">
+      <table class="table table-striped">
+        <tr>
+          <th>Time</th>
+          <th>Program</th>
+          <th>Host</th>
+        </tr>
+        {% for schedule in wednesday %}
+          <tr>
+            <td>{{schedule.start_time}} - {{schedule.end_time}}</td>
+            <td>{{schedule.title}}</td>
+            <td>{{schedule.host}}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="thursday">
+      <table class="table table-striped">
+        <tr>
+          <th>Time</th>
+          <th>Program</th>
+          <th>Host</th>
+        </tr>
+        {% for schedule in thursday %}
+          <tr>
+            <td>{{schedule.start_time}} - {{schedule.end_time}}</td>
+            <td>{{schedule.title}}</td>
+            <td>{{schedule.host}}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="friday">
+      <table class="table table-striped">
+        <tr>
+          <th>Time</th>
+          <th>Program</th>
+          <th>Host</th>
+        </tr>
+        {% for schedule in friday %}
+          <tr>
+            <td>{{schedule.start_time}} - {{schedule.end_time}}</td>
+            <td>{{schedule.title}}</td>
+            <td>{{schedule.host}}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="saturday">
+      <table class="table table-striped">
+        <tr>
+          <th>Time</th>
+          <th>Program</th>
+          <th>Host</th>
+        </tr>
+        {% for schedule in saturday %}
+          <tr>
+            <td>{{schedule.start_time}} - {{schedule.end_time}}</td>
+            <td>{{schedule.title}}</td>
+            <td>{{schedule.host}}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+
+{% endblock %}

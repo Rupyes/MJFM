@@ -1,0 +1,13 @@
+
+<div class="gallery_card_box">
+  <div class="gallery_card_img">
+    <img onclick="document.getElementById('modal').style.display='block';document.getElementById('full_img').src = this.src;" id="myImg" class="thumbnail" src="{{ g_photo.photo.url }}">
+    <div id="modal">
+      <span class="cross" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+
+      <img  class="full_image" id="full_img">
+    </div>
+  </div>
+  <h4>{{ g_photo.title }}</h4>
+  <p>{{g_photo.photo_desc}}</p>
+</div>

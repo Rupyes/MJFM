@@ -1,0 +1,22 @@
+{% extends "fm_app/base.html" %}
+
+{% block flashnewsbar %}
+<div class="flash-news-bar">
+  {% include "fm_app/include/_flashnews.html" %}
+</div>
+{% endblock %}
+
+{% block content %}
+  {% with 'Local National Sports International' as list %}
+  {% for topic in list.split %}
+    <div class="panel panel-success">
+      <div class="panel-heading  news_panel_heading">
+        <h4><a href="{% url "fm_app:one_category_news" newstype=topic %}">{{topic}} News <span class="badge">MORE</span></a></h4>
+      </div>
+      <div class="panel-body listofnews">
+        {% include "fm_app/include/_news_list.html" %}
+      </div>
+    </div>
+  {% endfor %}
+{% endwith %}
+{% endblock %}

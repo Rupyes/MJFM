@@ -1,0 +1,23 @@
+{% extends "fm_app/base.html" %}
+
+{% block content %}
+  <h1>Gallery</h1>
+  <hr>
+  {% if gallery_photos %}
+  <div class="gallery_photo_block">
+    <h3><u>Photos</u></h3>
+    {% for g_photo in gallery_photos %}
+      {% include "fm_app/include/_galleryimagecard.html" %}
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if gallery_videos %}
+  <div class="gallery_photo_block gallery_video_block">
+    <h3><u>Videos</u></h3>
+    <hr>
+    {% for g_video in gallery_videos %}
+      {% include "fm_app/include/_galleryvideocard.html" %}
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endblock %}
