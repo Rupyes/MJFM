@@ -20,32 +20,44 @@
 </head>
 
 <body>
-  <div class="panel panel-info constant">
-    <div class="panel-heading nowplaying">
-      {% now 'P' as time %}
+  <div class="constant">
+      {% now 'P' as currtime %}
       {% for program in nowplaying %}
-      {% if program.start_time|time:"P" <= time and program.end_time|time:"P" >= time %}
-                <p>
-                  <span class="glyphicon glyphicon-play"></span>
-                  <u>Now Playing:</u>
-                </p>
-                <h5>
-                    {{ program.title }}
-                </h5>
-        {% else %}
-                <p>
-                  <span class="glyphicon glyphicon-step-forward"></span>
-                  <u>Next:</u>
-                  @{{program.start_time}}<br>
-                  {{ program.title }}
-                </p>
-      {% endif %}
+        {% if currtime >= program.start_time|time:"P" and currtime < program.end_time|time:"P" %}
+                  <div class="nowplaying">
+                    <div class="nowplaying_text">
+                        <h5>Now Playing:</h5>
+                    </div>
+                    <div class="nowplaying_button">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </div>
+                    <div class="nowplaying_program_name">
+                        <p>{{ program.title }}</p>
+                    </div>
+                  </div>
+
+          {% else %}
+                  <div class="nextplaying">
+                    <div class="nextplaying_text">
+                        <h5>Next:</h5>
+                    </div>
+                    <div class="nextplaying_button">
+                      <span class="glyphicon glyphicon-step-forward"></span>
+                    </div>
+                    <div class="nextplaying_program_name">
+                    <p>@{{program.start_time}} {{ program.title }}</p>
+                    </div>
+                  </div>
+        {% endif %}
       {% endfor %}
-    </div>
-    <div class="radio">
-      <p>radio button coming soon..</p>
-      <p>{% now "P" %}</p>
-      <p></p>
+      <div class="fmradio">
+        <div class="fmradio_text">
+            <p>Radio coming soon..
+            {% now "P" %}</p>
+        </div>
+        <div class="fmradio_btn">
+          <span class="glyphicon glyphicon-play-circle"></span>
+        </div>
     </div>
   </div>
 
@@ -111,8 +123,8 @@
 
   <div class="footer">
     <div class=" container">
-      <p style="float: left;">Copyright 2017. All right reserved.</p>
-      <p style="float:right;">Rupesh Maharjan</p>
+      <p style="float: left;">Copyright &copy; 2017 Madhesh Jan Awaj FM. All rights reserved.</p>
+      <p style="float:right;">Powered by: <a href="https://www.linkedin.com/in/rupesh-maharjan-882229146/" style="color: #fff; text-decoration: none;" target="_blank">Rupesh Maharjan</a></p>
     </div>
   </div>
 </body>

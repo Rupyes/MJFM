@@ -75,8 +75,9 @@ class ContactFormView(generic.FormView):
         send_mail(
             subject="About Website",
             message = message,
-            from_email='contact-form@fm_app.com',
-            recipient_list = [settings.LIST_OF_EMAIL_RECIPIENTS]
+            from_email='madhesh@janawa.com',
+            recipient_list = ['rupyesmhj@gmail.com'],
+            fail_silently = False
         )
         return super().form_valid(form)
 

@@ -342,29 +342,56 @@ body{
   background: #000;
   padding-top: 40px;
   height:100px;
-  color: #fff;
+  color: #f1f1f1;
 }
 
 
 .constant{
   top:200px;
-  left: -100px;
+  left: -150px;
   position: fixed;
-  max-width: 250px;
-  height: auto;
+  width: 200px;
   background: #d5d5d5;
   z-index: 1;
-  -webkit-transition: left 0.1s; /* For Safari 3.1 to 6.0 */
-    transition: left 0.1s;
 }
 
 .constant:hover{
     left: 0px;
+    z-index: 1;
+    -webkit-transition: left 0.1s; /* For Safari 3.1 to 6.0 */
+      transition: left 0.1s;
 }
 
-.radio{
-  padding-left: 5px;
+.nowplaying, .nextplaying, .fmradio{
+  float: left;
 }
+
+.nowplaying_text, .nextplaying_text, .fmradio_text{
+  float: left;
+  width: 150px;
+  height: 50px;
+  padding-left: 15px;
+  padding-top: 5px;
+  background-color: #558D8F;
+  color: #f1f1f1;
+}
+.nowplaying_program_name, .nextplaying_program_name{
+  float: left;
+  width: 100%;
+  color: #171D1C;
+  background: #7AE7C7;
+}
+
+.nowplaying_button, .nextplaying_button, .fmradio_btn{
+  float: left;
+  padding-left: 15px;
+  padding-top: 15px;
+  width: 50px;
+  height: 50px;
+  background: #1B2347;
+  color: #fff;
+}
+
 
 /*------------------gallery---------------------*/
 .gallery_photo_block{

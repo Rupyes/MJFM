@@ -4,11 +4,11 @@
         <img src="{{ profile.profilepic.url }}">
       </div>
       <div class="details_profile">
-        <h3>{{profile.name}}</h3>
-        <h4>{{profile.post}}</h4>
-        <h4><a href="mailto:{{profile.email}}">{{profile.email}}</a></h4>
-        <h4>{{profile.phone}}</h4>
-        <h4>{{profile.address}}</h4>
+        <h4>{{profile.name}}</h4>
+        <p>{{profile.post}}</p>
+        <p><a href="mailto:{{profile.email}}">{{profile.email}}</a></p>
+        <p>{{profile.phone}}</p>
+        <p>{{profile.address}}</p>
       </div>
     </div>
     {% else %}
@@ -17,10 +17,10 @@
         <img src="{{ profile.profilepic.url }}">
       </div>
       <div class="details_profile">
-      <h3>{{profile.name}}</h3>
-      <h4>{{profile.post}}</h4>
-      <h4>{{profile.phone|linebreaksbr}}</h4>
-      <h4>{{profile.address}}</h4>
+      <h4>{{profile.name}}</h4>
+      <p>{{profile.post}}</p>
+      <p>{{profile.phone|linebreaksbr}}</p>
+      <p>{{profile.address}}</p>
       </div>
     </div>
   {% endif %}

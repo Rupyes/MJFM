@@ -131,15 +131,6 @@ MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 
-#form
-LIST_OF_EMAIL_RECIPIENTS = [ 'rupyesmhj@gmail.com', ]
-
-
 #Email
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'testing@example.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-EMAIL_PORT = 1025
+EMAIL_BACKEND = "sgbackend.SendGridBackend"
+SENDGRID_API_KEY = "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"
